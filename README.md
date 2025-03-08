@@ -1,27 +1,8 @@
-### Name
- Gyan Gali
-
-### Email
-ggali@stevens.edu
-
-### Github 
-https://github.com/Gyan268/StravaLite
-
-### Project Title
-Strava Lite
+### Project 
+Fitness Tracking Application
 
 ### Description
-The Strava Lite project is a running tracker which allows users to register, track their workouts, and follow friends. The server is built using Flask and Flask-RESTful, providing REST APIs for all core functionalities.
-
-### Project Structure
-.
-├── README.md
-├── api.py
-├── app.py
-├── constants.py 
-├── requirements.txt
-├── routes.py
-└── test.py
+Developed a full-stack fitness tracking application that allows users to register, log workouts, and follow friends. The Flask backend (Python) handles user authentication, workout storage (PostgreSQL), and API endpoints, while the Angular frontend (TypeScript, HTML, CSS) dynamically fetches and displays user data. Integrated RESTful APIs, Flask-RESTful, SQLAlchemy ORM, and CORS for seamless backend operations. Implemented HTTP client requests in Angular to retrieve users and workouts efficiently. Deployed using Docker and Azure to ensure scalability and performance.
 
 ### APIs
 ## RegisterUser
@@ -175,6 +156,3 @@ The Strava Lite project is a running tracker which allows users to register, tra
     ]
 }
 ```
-### Bug/Issues Faced
-1. Early in development, requests without the application/json header caused unexpected errors. I added explicit checks to ensure all requests are JSON and return appropriate status codes when this validation fails.
-2. Ensuring that users cannot follow non-existent accounts or duplicate follows was initially tricky. I implemented validation checks for both the current user and the user to follow, ensuring that the following list maintains unique entries.
