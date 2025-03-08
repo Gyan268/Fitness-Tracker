@@ -1,0 +1,17 @@
+<h2>Select a User</h2>
+<select (change)="fetchWorkoutsFromEvent($event)">
+  <option *ngFor="let user of users" [value]="user.id">
+    {{ user.name }} (Age: {{ user.age }})
+  </option>
+</select>
+
+<h2>Workouts</h2>
+<ul *ngIf="workouts.length > 0; else noWorkouts">
+  <li *ngFor="let workout of workouts">
+    Date: {{ workout.date }} | Time: {{ workout.time }} | Distance: {{ workout.distance }}
+  </li>
+</ul>
+
+<ng-template #noWorkouts>
+  <p>No workouts found for the selected user.</p>
+</ng-template>
