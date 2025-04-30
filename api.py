@@ -16,7 +16,7 @@ add_workout_parser.add_argument("distance", type=str, required=True)
 follow_friend_parser = reqparse.RequestParser()
 follow_friend_parser.add_argument("follow_id", type=int, required=True)  # Use int for user IDs
 
-# ✅ Register a User (POST /user)
+# Register a User (POST /user)
 class RegisterUser(Resource):
     def post(self):
         args = register_user_parser.parse_args()
@@ -32,7 +32,7 @@ class RegisterUser(Resource):
             "following": []
         }, 201
 
-# ✅ Get User by ID (GET /user/<user_id>)
+# Get User by ID (GET /user/<user_id>)
 class GetUser(Resource):
     def get(self, user_id):
         user = User.query.get(user_id)
@@ -49,7 +49,7 @@ class GetUser(Resource):
             "following": []
         }, 200
 
-# ✅ Delete User (DELETE /user/<user_id>)
+# Delete User (DELETE /user/<user_id>)
 class RemoveUser(Resource):
     def delete(self, user_id):
         user = User.query.get(user_id)
@@ -60,7 +60,7 @@ class RemoveUser(Resource):
         db.session.commit()
         return {"message": "User deleted successfully"}, 200
 
-# ✅ List All Users (GET /users)
+# List All Users (GET /users)
 class ListUsers(Resource):
     def get(self):
         users = User.query.all()
@@ -70,7 +70,7 @@ class ListUsers(Resource):
             ]
         }, 200
 
-# ✅ Add Workout (PUT /workouts/<user_id>)
+# Add Workout (PUT /workouts/<user_id>)
 class AddWorkout(Resource):
     def put(self, user_id):
         user = User.query.get(user_id)
@@ -88,7 +88,7 @@ class AddWorkout(Resource):
             "distance": new_workout.distance
         }, 201
 
-# ✅ List Workouts for a User (GET /workouts/<user_id>)
+# List Workouts for a User (GET /workouts/<user_id>)
 class ListWorkouts(Resource):
     def get(self, user_id):
         user = User.query.get(user_id)
