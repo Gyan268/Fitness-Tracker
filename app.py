@@ -9,7 +9,7 @@ from routes import init_routes  # Import route initialization function
 # Initialize Flask App
 app = Flask(__name__)
 
-# ✅ Properly Configure CORS
+# Properly Configure CORS
 CORS(app, resources={r"/*": {"origins": "*"}})  # Allow requests from all domains
 
 # Load Database Configuration
