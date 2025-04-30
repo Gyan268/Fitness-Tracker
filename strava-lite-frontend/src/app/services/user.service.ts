@@ -12,7 +12,7 @@ export interface User {
   id: number;
   name: string;
   age: number;
-  workouts: Workout[]; // ✅ Ensure 'workouts' exists
+  workouts: Workout[]; // Ensure 'workouts' exists
 }
 
 @Injectable({
