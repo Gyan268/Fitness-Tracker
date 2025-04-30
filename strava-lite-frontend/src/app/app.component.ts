@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterModule, NavbarComponent] // ✅ Import RouterModule and Navbar
+  imports: [RouterModule, NavbarComponent] // Import RouterModule and Navbar
 })
 export class AppComponent {
   title = 'Strava Lite';
